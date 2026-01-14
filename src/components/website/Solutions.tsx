@@ -190,6 +190,23 @@ export default function Solutions() {
           ))}
         </div>
 
+        {/* Video Section */}
+        <div className={`mt-10 sm:mt-16 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <div className="text-center mb-6">
+            <h3 className="text-lg sm:text-xl font-bold text-white mb-2">See Our Solutions in Action</h3>
+            <p className="text-gray-500 text-sm">엔씽의 수직농장 기술을 영상으로 확인하세요</p>
+          </div>
+          <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden border border-white/10">
+            <iframe
+              className="absolute inset-0 w-full h-full"
+              src="https://www.youtube.com/embed/64k05R-3B4k"
+              title="N.THING Solutions"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        </div>
+
         {/* Tech Stack Banner */}
         <div className={`mt-10 sm:mt-16 p-6 sm:p-8 bg-zinc-900 border border-white/10 rounded-2xl transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
