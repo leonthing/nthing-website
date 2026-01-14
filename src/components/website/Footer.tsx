@@ -14,19 +14,12 @@ export default function Footer() {
               데이터 기반의 스마트 농업으로 지속 가능한 식량 생산 인프라를 구축합니다.
             </p>
             <div className="flex flex-wrap gap-3">
-              {[
-                { name: 'IoT', hasHeart: false },
-                { name: 'AI/ML', hasHeart: false },
-                { name: 'Cloud', hasHeart: false },
-                { name: 'Hydroponics', hasHeart: true },
-                { name: 'Automation', hasHeart: false }
-              ].map((tech) => (
+              {['IoT', 'AI/ML', 'Cloud', 'Hydroponics', 'Heart', 'Automation'].map((tech) => (
                 <span
-                  key={tech.name}
-                  className="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-400 flex items-center gap-1"
+                  key={tech}
+                  className="px-3 py-1 bg-white/5 border border-white/10 rounded text-xs text-gray-400"
                 >
-                  {tech.name}
-                  {tech.hasHeart && <span className="text-red-500">&#9829;</span>}
+                  {tech}
                 </span>
               ))}
             </div>

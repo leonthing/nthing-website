@@ -114,20 +114,13 @@ export default function About() {
 
             {/* Tech Stack */}
             <div className="flex flex-wrap gap-2 sm:gap-3 mb-6 sm:mb-8">
-              {[
-                { name: 'IoT', hasHeart: false },
-                { name: 'Cloud', hasHeart: false },
-                { name: 'AI/ML', hasHeart: false },
-                { name: 'Hydroponics', hasHeart: true },
-                { name: 'Automation', hasHeart: false }
-              ].map((tech, idx) => (
+              {['IoT', 'Cloud', 'AI/ML', 'Hydroponics', 'Heart', 'Automation'].map((tech, idx) => (
                 <span
-                  key={tech.name}
-                  className={`px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 rounded-lg text-xs sm:text-sm text-gray-300 transition-all duration-500 hover:border-orange-500/30 hover:bg-orange-500/5 flex items-center gap-1.5 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                  key={tech}
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 rounded-lg text-xs sm:text-sm text-gray-300 transition-all duration-500 hover:border-orange-500/30 hover:bg-orange-500/5 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                   style={{ transitionDelay: `${300 + idx * 100}ms` }}
                 >
-                  {tech.name}
-                  {tech.hasHeart && <span className="text-red-500">&#9829;</span>}
+                  {tech}
                 </span>
               ))}
             </div>

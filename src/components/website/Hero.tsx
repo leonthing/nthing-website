@@ -63,14 +63,16 @@ function AnimatedCounter({ value, suffix = '', duration = 2000 }: { value: strin
 export default function Hero() {
   const [isVisible, setIsVisible] = useState(false)
   const [typedText, setTypedText] = useState('')
-  const [showXAI, setShowXAI] = useState(false)
-  const [blinkPhase, setBlinkPhase] = useState(false)
+  const [typedXAI, setTypedXAI] = useState('')
+  const [showCursor, setShowCursor] = useState(true)
+  const [isTypingXAI, setIsTypingXAI] = useState(false)
   const fullText = 'Data-Driven'
+  const xaiText = ' X AI'
 
   useEffect(() => {
     setIsVisible(true)
 
-    // Typing animation
+    // Typing animation for Data-Driven
     let index = 0
     const typeInterval = setInterval(() => {
       if (index <= fullText.length) {
@@ -78,14 +80,27 @@ export default function Hero() {
         index++
       } else {
         clearInterval(typeInterval)
-        // After typing completes, start blink and add X AI
-        setTimeout(() => {
-          setBlinkPhase(true)
-          setTimeout(() => {
-            setBlinkPhase(false)
-            setShowXAI(true)
-          }, 1500)
-        }, 500)
+        // After typing completes, blink cursor a few times then type X AI
+        let blinkCount = 0
+        const blinkInterval = setInterval(() => {
+          setShowCursor(prev => !prev)
+          blinkCount++
+          if (blinkCount >= 6) {
+            clearInterval(blinkInterval)
+            setShowCursor(true)
+            setIsTypingXAI(true)
+            // Start typing X AI
+            let xaiIndex = 0
+            const xaiInterval = setInterval(() => {
+              if (xaiIndex <= xaiText.length) {
+                setTypedXAI(xaiText.slice(0, xaiIndex))
+                xaiIndex++
+              } else {
+                clearInterval(xaiInterval)
+              }
+            }, 100)
+          }
+        }, 250)
       }
     }, 100)
 
@@ -136,13 +151,11 @@ export default function Hero() {
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white leading-tight mb-4 sm:mb-6">
             <span className="inline-block min-w-[280px] sm:min-w-[400px]">
-              <span className={blinkPhase ? 'animate-blink-fast' : ''}>
-                {typedText}
+              {typedText}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-300">
+                {typedXAI}
               </span>
-              {showXAI && (
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-300 animate-fade-in"> X AI</span>
-              )}
-              {!showXAI && <span className="animate-blink">|</span>}
+              {(showCursor || isTypingXAI) && <span className={showCursor ? 'opacity-100' : 'opacity-0'}>|</span>}
             </span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-orange-300 animate-gradient">
