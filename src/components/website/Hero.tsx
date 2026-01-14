@@ -172,17 +172,16 @@ export default function Hero() {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-12 sm:mb-16">
             <a
-              href="#solutions"
-              className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 transition-all hover:shadow-lg hover:shadow-orange-500/25 text-center relative overflow-hidden"
+              href="#platform"
+              className="group px-6 sm:px-8 py-3.5 sm:py-4 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold rounded-lg hover:shadow-lg hover:shadow-emerald-500/25 transition-all text-center relative overflow-hidden"
             >
-              <span className="relative z-10">솔루션 알아보기</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-600 to-orange-500 opacity-0 group-hover:opacity-100 transition-opacity" />
+              <span className="relative z-10">N.FARM.AI</span>
             </a>
             <a
-              href="#contact"
-              className="px-6 sm:px-8 py-3.5 sm:py-4 border border-white/20 text-white font-semibold rounded-lg hover:bg-white/5 hover:border-white/40 transition-all text-center"
+              href="#solutions"
+              className="px-6 sm:px-8 py-3.5 sm:py-4 bg-orange-500 text-white font-semibold rounded-lg hover:bg-orange-600 hover:shadow-lg hover:shadow-orange-500/25 transition-all text-center"
             >
-              도입 문의
+              수직농장 솔루션
             </a>
           </div>
 
