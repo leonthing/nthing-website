@@ -190,21 +190,20 @@ export default function Solutions() {
           ))}
         </div>
 
-        {/* Video Section */}
-        <div className={`mt-10 sm:mt-16 transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-          <div className="text-center mb-6">
-            <h3 className="text-lg sm:text-xl font-bold text-white mb-2">See Our Solutions in Action</h3>
-            <p className="text-gray-500 text-sm">엔씽의 수직농장 기술을 영상으로 확인하세요</p>
-          </div>
-          <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden border border-white/10">
-            <iframe
-              className="absolute inset-0 w-full h-full"
-              src="https://www.youtube.com/embed/64k05R-3B4k"
-              title="N.THING Solutions"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
+        {/* YouTube CTA */}
+        <div className={`mt-10 sm:mt-16 text-center transition-all duration-1000 delay-400 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
+          <a
+            href="https://www.youtube.com/@tv-gv9yh/videos"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-4 bg-red-600 hover:bg-red-700 text-white font-semibold rounded-xl transition-all hover:shadow-lg hover:shadow-red-600/25"
+          >
+            <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            YouTube에서 더 많은 영상 보기
+          </a>
+          <p className="text-gray-500 text-sm mt-3">엔씽의 수직농장 기술을 영상으로 확인하세요</p>
         </div>
 
         {/* Tech Stack Banner */}
