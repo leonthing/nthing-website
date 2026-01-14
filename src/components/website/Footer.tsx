@@ -27,19 +27,25 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-lg font-semibold text-white mb-4">Solutions</h4>
+            <h4 className="text-lg font-semibold text-white mb-4">Navigation</h4>
             <ul className="space-y-3">
               <li>
-                <a href="#solutions" className="text-gray-500 hover:text-orange-500 transition-colors">Farm OS</a>
+                <a href="#about" className="text-gray-500 hover:text-orange-500 transition-colors">About</a>
               </li>
               <li>
-                <a href="#solutions" className="text-gray-500 hover:text-orange-500 transition-colors">CUBE</a>
+                <a href="#platform" className="text-gray-500 hover:text-orange-500 transition-colors">N.FARM.AI</a>
               </li>
               <li>
-                <a href="#solutions" className="text-gray-500 hover:text-orange-500 transition-colors">Giga Farm</a>
+                <a href="#solutions" className="text-gray-500 hover:text-orange-500 transition-colors">Solutions</a>
               </li>
               <li>
                 <a href="#products" className="text-gray-500 hover:text-orange-500 transition-colors">Products</a>
+              </li>
+              <li>
+                <a href="#fresh-produce" className="text-gray-500 hover:text-orange-500 transition-colors">Fresh Produce</a>
+              </li>
+              <li>
+                <a href="#contact" className="text-gray-500 hover:text-orange-500 transition-colors">Contact</a>
               </li>
             </ul>
           </div>

@@ -56,14 +56,14 @@ export default function Partners() {
       description: '기업 급식 식자재 공급'
     },
     {
-      name: 'SG다인힐',
-      category: '단체급식',
-      description: '프리미엄 급식 서비스'
-    },
-    {
       name: 'OTTOGI',
       category: '식품제조',
       description: '식품 원료 파트너십'
+    },
+    {
+      name: 'SG다인힐',
+      category: '단체급식',
+      description: '프리미엄 급식 서비스'
     },
     {
       name: '김호윤 쉐프',
