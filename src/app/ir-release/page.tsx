@@ -39,11 +39,6 @@ interface IRRelease {
 // API URL
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://nthing-corp-platform.vercel.app'
 
-// Custom page mappings (token -> custom page path)
-const CUSTOM_PAGES: Record<string, string> = {
-  '7ede3a23e72441ae9cbebe578d141072': '/ir-release/custom/nthing-2026-bridge',
-}
-
 // Animated Section Component
 function AnimatedSection({
   children,
@@ -95,21 +90,26 @@ function IRReleaseContent() {
 
   useEffect(() => {
     if (tokenFromUrl) {
-      // Check if this token has a custom page
-      const customPage = CUSTOM_PAGES[tokenFromUrl]
-      if (customPage) {
-        router.replace(customPage)
-        return
-      }
-      fetchRelease(tokenFromUrl)
+      // First check if there's a custom page for this token
+      checkAndFetchRelease(tokenFromUrl)
     }
-  }, [tokenFromUrl, router])
+  }, [tokenFromUrl])
 
-  const fetchRelease = async (token: string) => {
+  const checkAndFetchRelease = async (token: string) => {
     try {
       setLoading(true)
       setError(null)
 
+      // Check if there's a custom page for this token
+      const checkRes = await fetch(`${API_URL}/api/public/ir-release?token=${token}&check=true`)
+      const checkData = await checkRes.json()
+
+      if (checkData.hasCustomPage && checkData.customPageSlug) {
+        router.replace(`/ir-release/custom/${checkData.customPageSlug}`)
+        return
+      }
+
+      // No custom page, fetch the regular release data
       const res = await fetch(`${API_URL}/api/public/ir-release?token=${token}`)
       const data = await res.json()
 
