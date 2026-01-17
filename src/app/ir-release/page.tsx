@@ -39,6 +39,11 @@ interface IRRelease {
 // API URL
 const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://nthing-corp-platform.vercel.app'
 
+// Custom page mappings (token -> custom page path)
+const CUSTOM_PAGES: Record<string, string> = {
+  '7ede3a23e72441ae9cbebe578d141072': '/ir-release/custom/nthing-2026-bridge',
+}
+
 // Animated Section Component
 function AnimatedSection({
   children,
@@ -90,9 +95,15 @@ function IRReleaseContent() {
 
   useEffect(() => {
     if (tokenFromUrl) {
+      // Check if this token has a custom page
+      const customPage = CUSTOM_PAGES[tokenFromUrl]
+      if (customPage) {
+        router.replace(customPage)
+        return
+      }
       fetchRelease(tokenFromUrl)
     }
-  }, [tokenFromUrl])
+  }, [tokenFromUrl, router])
 
   const fetchRelease = async (token: string) => {
     try {
