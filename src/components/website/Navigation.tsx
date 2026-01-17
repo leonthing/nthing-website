@@ -15,12 +15,13 @@ export default function Navigation() {
   }, [])
 
   const navLinks = [
-    { href: '#about', label: 'About' },
-    { href: '#platform', label: 'N.FARM.AI' },
-    { href: '#solutions', label: 'Solutions' },
-    { href: '#products', label: 'Products' },
-    { href: '#fresh-produce', label: 'Fresh Produce' },
-    { href: '#contact', label: 'Contact' }
+    { href: '/#about', label: 'About' },
+    { href: '/#platform', label: 'N.FARM.AI' },
+    { href: '/#solutions', label: 'Solutions' },
+    { href: '/#products', label: 'Products' },
+    { href: '/#fresh-produce', label: 'Fresh Produce' },
+    { href: '/#contact', label: 'Contact' },
+    { href: '/ir', label: 'IR' }
   ]
 
   return (
@@ -57,7 +58,7 @@ export default function Navigation() {
           {/* CTA Button */}
           <div className="hidden md:flex items-center gap-4">
             <a
-              href="#contact"
+              href="/#contact"
               className="px-5 py-2.5 bg-orange-500 text-white rounded-lg text-sm font-medium hover:bg-orange-600 transition-all"
             >
               문의하기
@@ -97,7 +98,7 @@ export default function Navigation() {
               ))}
               <hr className="my-2 border-white/10" />
               <a
-                href="#contact"
+                href="/#contact"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="block px-4 py-3 bg-orange-500 text-white text-center rounded-lg hover:bg-orange-600 transition-colors"
               >

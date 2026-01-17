@@ -21,6 +21,11 @@ export default function Footer() {
                 >
                   {tech}
                   {tech === 'Heart' && <span className="text-red-500">♥</span>}
+                  {tech === 'Hydroponics' && (
+                    <svg className="w-3 h-3 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
+                  )}
                 </span>
               ))}
             </div>
@@ -47,6 +52,9 @@ export default function Footer() {
               </li>
               <li>
                 <a href="#contact" className="text-gray-500 hover:text-orange-500 transition-colors">Contact</a>
+              </li>
+              <li>
+                <a href="/ir" className="text-gray-500 hover:text-orange-500 transition-colors">IR</a>
               </li>
             </ul>
           </div>
@@ -86,16 +94,6 @@ export default function Footer() {
             <p className="text-gray-600 text-sm text-center md:text-left">
               &copy; {new Date().getFullYear()} N.THING Inc. All rights reserved.
             </p>
-            <div className="flex items-center gap-6 text-sm text-gray-600">
-              <a
-                href="https://nthing-corp-platform.vercel.app/login"
-                className="hover:text-orange-500 transition-colors"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Admin
-              </a>
-            </div>
           </div>
         </div>
       </div>

@@ -117,10 +117,16 @@ export default function About() {
               {['IoT', 'Cloud', 'AI/ML', 'Hydroponics', 'Heart', 'Automation'].map((tech, idx) => (
                 <span
                   key={tech}
-                  className={`px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 rounded-lg text-xs sm:text-sm text-gray-300 transition-all duration-500 hover:border-orange-500/30 hover:bg-orange-500/5 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                  className={`px-3 sm:px-4 py-1.5 sm:py-2 bg-white/5 border border-white/10 rounded-lg text-xs sm:text-sm text-gray-300 transition-all duration-500 hover:border-orange-500/30 hover:bg-orange-500/5 flex items-center gap-1 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                   style={{ transitionDelay: `${300 + idx * 100}ms` }}
                 >
                   {tech}
+                  {tech === 'Heart' && <span className="text-red-500">♥</span>}
+                  {tech === 'Hydroponics' && (
+                    <svg className="w-4 h-4 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" />
+                    </svg>
+                  )}
                 </span>
               ))}
             </div>

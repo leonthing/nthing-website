@@ -66,9 +66,9 @@ export default function Partners() {
       description: '프리미엄 급식 서비스'
     },
     {
-      name: '김호윤 쉐프',
-      category: '파인다이닝',
-      description: '미쉐린 스타 쉐프'
+      name: 'MNL',
+      category: '단체급식',
+      description: '프리미엄 급식 서비스'
     },
     {
       name: '최지형 쉐프',
@@ -77,6 +77,11 @@ export default function Partners() {
     },
     {
       name: '황진선 쉐프',
+      category: '파인다이닝',
+      description: '미쉐린 스타 쉐프'
+    },
+    {
+      name: '김호윤 쉐프',
       category: '파인다이닝',
       description: '미쉐린 스타 쉐프'
     }
