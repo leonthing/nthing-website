@@ -21,7 +21,8 @@ export default function Navigation() {
     { href: '/#products', label: 'Products' },
     { href: '/#fresh-produce', label: 'Fresh Produce' },
     { href: '/#contact', label: 'Contact' },
-    { href: '/ir', label: 'IR' }
+    { href: '/ir', label: 'IR' },
+    { href: '/ir-release', label: 'IR Release' }
   ]
 
   return (

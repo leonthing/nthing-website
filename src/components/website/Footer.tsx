@@ -56,6 +56,9 @@ export default function Footer() {
               <li>
                 <a href="/ir" className="text-gray-500 hover:text-orange-500 transition-colors">IR</a>
               </li>
+              <li>
+                <a href="/ir-release" className="text-gray-500 hover:text-orange-500 transition-colors">IR Release</a>
+              </li>
             </ul>
           </div>
 
